@@ -1,0 +1,14 @@
+
+<div class="card container hero">
+    <div class="row align-items-center text-md-left">
+        <div class="col-lg-4">
+            <h2 class="mb-3 text-center">{{ topMovie.title }}</h2>
+            <p class="p-0">{{ topMovie.overview }}</p>
+        </div>
+        <div class="col-lg-8">
+            <iframe id="ytplayer" type="text/html" width="640" height="360"
+                    src="https://www.youtube.com/embed/{{ topMovieTrailer }}?autoplay=0&origin={{ app.request.getBaseURL() }}"
+                    frameborder="0"></iframe>
+        </div>
+    </div>
+</div>

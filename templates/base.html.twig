@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>We Movies</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+<body {{ stimulus_controller('movie') }}>
+    {% include '_header.html.twig' %}
+    {% block content %}{% endblock %}
+
+
+    <div>
+    <!-- Modal -->
+    <div class="modal fade modal-xl" id="movieDetails" tabindex="-1" aria-labelledby="Movie Details" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" data-movie-target="modal">
+                    ...
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    {% block javascript %}{% endblock %}
+</body>

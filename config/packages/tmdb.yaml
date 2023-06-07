@@ -1,0 +1,15 @@
+tmdb_symfony:
+    api_key: 79fd9b6f0f223b85cf198620e812042c
+    options:
+        event_dispatcher:
+            adapter: Symfony\Component\EventDispatcher\EventDispatcher
+        http:
+            client: Symfony\Component\HttpClient\Psr18Client
+            request_factory: Nyholm\Psr7\Factory\Psr17Factory
+            response_factory: Nyholm\Psr7\Factory\Psr17Factory
+            stream_factory: Nyholm\Psr7\Factory\Psr17Factory
+            uri_factory: Nyholm\Psr7\Factory\Psr17Factory
+
+    cache:
+        enabled: true
+        adapter: cache.tmdb

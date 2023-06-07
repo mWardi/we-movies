@@ -1,0 +1,21 @@
+<div class="featured-user  mb-5 mb-lg-0">
+    <h3 class="mb-4">Genres</h3>
+    <ul class="list-unstyled">
+        {% for genre in genres %}
+            <div class="form-check">
+
+                <input class="form-check-input" type="checkbox"
+                       value="{{ genre.id }}"
+                       id="genre{{ genre.id }}"
+                       {{ selectedGenre is defined and genre.id == selectedGenre ? 'checked=checked' : '' }}
+                >
+                <label class="form-check-label" for="genre{{ genre.id }}">
+                    <a href="{{ url('wemovies_movie_home', {'genre': genre.id}) }}">
+                    {{ genre.name }}
+                    </a>
+                </label>
+
+            </div>
+        {% endfor %}
+    </ul>
+</div>

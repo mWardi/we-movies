@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    {% if topMovie is defined %}
+    {% include('/Movie/_hero.html.twig') %}
+    {% endif %}
+    <div class="site-section">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-3">
+                    {% include '/Movie/_genre.html.twig' %}
+                </div>
+
+                <div class="col-lg-9">
+                    {% include '/Movie/_list.html.twig' %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

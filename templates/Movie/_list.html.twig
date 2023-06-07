@@ -1,0 +1,24 @@
+<h3 class="mb-4">Movies</h3>
+{% for movie in movies %}
+    <div class="d-block d-md-flex movie bg-white mb-3" data-aos="fade-up">
+        <div class="image"
+             style="background-image: url('{{ movie.posterImage|tmdb_image_url('w200', 200, null)|raw }}');"></div>
+        <div class="text">
+            <h4 class="font-weight-light mb-1">{{ movie.title }}{{ movie.voteAverage|rating|raw }}<span class="fw-lighter small">({{ movie.voteCount }} Votes)</span></h4>
+            <div class="mb-2 fw-medium">{{ movie.releaseDate|date('Y') }} - <span class="text-primary">{{ render_companies(movie.productionCompanies) }}</span></div>
+            <div class="overview">
+                <p class="text-start">{{ movie.overview }}</p>
+                <div class="text-end">
+                    <button type="button"
+                            class="btn btn-primary"
+                            data-link="{{ url('wemovies_movie_details', {id : movie.id}) }}"
+                            data-action="movie#openModal"
+                            data-bs-toggle="modal"
+                            data-bs-target="#movieDetails">
+                        More Details
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}

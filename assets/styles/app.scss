@@ -1,0 +1,51 @@
+
+@import '_global.scss';
+
+
+
+.movie {
+  -webkit-box-shadow: 0 5px 40px -10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 40px -10px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  .rating {
+    display: inline;
+    margin: 0 20px;
+  }
+  .sep {
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #ccc;
+  }
+  .image {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 300px;
+    @media (min-width: 768px) {
+      width: 154px;
+      height: auto;
+    }
+  }
+  .text {
+    width: 100%;
+    padding: 20px;
+    a {
+      color: #3ca59d;
+    }
+    @media (min-width: 768px) {
+        width: calc(100% - 154px);
+    }
+  }
+}
+
+.search-block {
+  .dropdown-menu {
+    display: block;
+  }
+}
+
+
+
+
+
